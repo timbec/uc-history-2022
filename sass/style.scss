@@ -1,0 +1,34 @@
+/*!
+Theme Name: Uranium City History 2022
+Author: Tim Beckett
+Author URI: https://tim-beckett.com
+Description: Updated theme for the uraniumcity-history.com website, using elements of 2022 styles and hybrid Full Site Editing and regular WP
+Version: 1.0.0
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+    - normalize
+    - box-sizing
+
+# Base
+    - 2022 Styles
+
+/
+*-------------------------------------------------------------- # Generic --------------------------------------------------------------*/
+@import "generic/normalize";
+@import "generic/box-sizing";
+
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "base/2022";
+@import "base/typography";
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/navigation";
