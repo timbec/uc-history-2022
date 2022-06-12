@@ -1,3 +1,50 @@
+/**
+* Typography
+**/
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /*font-size: 16px;*/
+    line-height: 1.7;
+    color: $color-grey;
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-stretch: normal;
+    font-display: swap;
+}
+
+h1 {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid $color-grey;
+}
+
+p {
+    font-size: 16px;
+    font-family: Helvetica;
+    font-weight: 100;
+    text-align: justify;
+}
+
 a {
     text-decoration: none;
+}
+
+li {
+    font-size: 16px;
+    list-style: none;
+    font-family: Helvetica, sans-serif;
+    font-weight: 100;
+    margin-left: 20px;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
 }

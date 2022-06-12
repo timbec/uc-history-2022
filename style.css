@@ -339,6 +339,26 @@ html {
 }
 
 /*--------------------------------------------------------------
+# Abstracts
+--------------------------------------------------------------*/
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+/*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
 /*
@@ -463,8 +483,99 @@ body > .is-root-container > .wp-block-template-part > .wp-block-cover,
 	padding-left: var(--wp--custom--spacing--outer);
 }
 
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+@media only screen and (max-width: 75em) {
+	html {
+		font-size: 56.25%;
+	}
+}
+
+@media only screen and (max-width: 56.25em) {
+	html {
+		font-size: 50%;
+	}
+}
+
+@media only screen and (min-width: 112.5em) {
+	html {
+		font-size: 75%;
+	}
+}
+
+body {
+	box-sizing: border-box;
+	padding: 3rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+	body {
+		padding: 0;
+	}
+}
+
+::selection {
+	background-color: #000;
+	color: #fff;
+}
+
+/**
+* Typography
+**/
+body {
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	/*font-size: 16px;*/
+	line-height: 1.7;
+	color: #8a8a8a;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	font-stretch: normal;
+	font-display: swap;
+}
+
+h1 {
+	padding-bottom: 3rem;
+	border-bottom: 1px solid #8a8a8a;
+}
+
+p {
+	font-size: 16px;
+	font-family: Helvetica;
+	font-weight: 100;
+	text-align: justify;
+}
+
 a {
 	text-decoration: none;
+}
+
+li {
+	font-size: 16px;
+	list-style: none;
+	font-family: Helvetica, sans-serif;
+	font-weight: 100;
+	margin-left: 20px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
 }
 
 /*--------------------------------------------------------------
@@ -473,6 +584,11 @@ a {
 .nav-menu {
 	display: flex;
 	justify-content: space-evenly;
+}
+
+.entry-content {
+	max-width: 80rem;
+	margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */
