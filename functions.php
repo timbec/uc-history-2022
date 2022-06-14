@@ -204,6 +204,7 @@ add_action( 'wp_head', 'uc_history_2022_preload_webfonts' );
  */
 function uc_history_2022_scripts() {
 	wp_enqueue_style( 'uc-history-2022-style', get_stylesheet_uri(), array(), _S_VERSION );
+	
 	wp_style_add_data( 'uc-history-2022-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'uc-history-2022-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -213,6 +214,33 @@ function uc_history_2022_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'uc_history_2022_scripts' );
+
+
+/***
+ * Custom Gutenberg Blocks
+ * 
+ */
+class JSXBlock {
+  function __construct($name) {
+    $this->name = $name;
+    add_action('init', [$this, 'onInit']);
+  }
+
+  function onInit() {
+    wp_register_script($this->name, get_stylesheet_directory_uri() . "/build/{$this->name}.js", array('wp-blocks', 'wp-editor'));
+    register_block_type("ucblocktheme/{$this->name}", array(
+      'editor_script' => $this->name
+    ));
+  }
+}
+
+new JSXBlock('banner');
+
+
+
+
+
+
 
 /**
  * Implement the Custom Header feature.
@@ -233,11 +261,4 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
 

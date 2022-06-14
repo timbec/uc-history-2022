@@ -8,6 +8,7 @@
     "WordPress",
     "Theme"
   ],
+  "main": "index.js",
   "homepage": "https://github.com/Automattic/_s#readme",
   "repository": {
     "type": "git",
@@ -36,6 +37,9 @@
     "map": false
   },
   "scripts": {
+    "start": "wp-scripts start src/index.js uc-blocks/banner.js",
+    "dev": "wp-scripts start",
+    "devFast": "wp-scripts start",
     "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
     "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
