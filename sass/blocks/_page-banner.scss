@@ -1,0 +1,38 @@
+.banner-image {
+    opacity: 0.76;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.front-banner-image {
+    position: relative;
+
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50rem; // temp
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h1 {
+            font-size: 6rem;
+            text-align: center;
+            color: white;
+            font-weight: 300;
+        }
+
+        p {
+            font-size: 2rem;
+            text-align: center;
+            color: white;
+        }
+    }
+}
