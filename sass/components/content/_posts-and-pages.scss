@@ -1,4 +1,10 @@
 .entry-content {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+// class for constraining elements
+.container {
     max-width: 80rem;
     margin: 0 auto;
 }

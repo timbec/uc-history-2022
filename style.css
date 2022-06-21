@@ -515,7 +515,6 @@ html {
 
 body {
 	box-sizing: border-box;
-	padding: 1rem 2rem;
 }
 
 @media only screen and (max-width: 56.25em) {
@@ -593,6 +592,7 @@ img {
 }
 
 .site-branding .site-title {
+	margin-bottom: .5rem;
 	border-bottom: none;
 }
 
@@ -608,6 +608,11 @@ img {
 }
 
 .entry-content {
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.container {
 	max-width: 80rem;
 	margin: 0 auto;
 }
