@@ -217,25 +217,78 @@ function uc_history_2022_scripts() {
 add_action( 'wp_enqueue_scripts', 'uc_history_2022_scripts' );
 
 
-/***
- * Custom Gutenberg Blocks
+/**
+ * 
+ * Placeholder Blocks
  * 
  */
-class JSXBlock {
+class PlaceholderBlock {
   function __construct($name) {
     $this->name = $name;
     add_action('init', [$this, 'onInit']);
   }
 
+  function ourRenderCallback($attributes, $content) {
+    ob_start();
+    require get_theme_file_path("/uc-blocks/{$this->name}.php");
+    return ob_get_clean();
+  }
+
   function onInit() {
-    wp_register_script($this->name, get_stylesheet_directory_uri() . "/build/{$this->name}.js", array('wp-blocks', 'wp-editor'));
+    wp_register_script($this->name, get_stylesheet_directory_uri() . "/uc-blocks/{$this->name}.js", array('wp-blocks', 'wp-editor'));
+    
     register_block_type("ucblocktheme/{$this->name}", array(
-      'editor_script' => $this->name
+      'editor_script' => $this->name,
+      'render_callback' => [$this, 'ourRenderCallback']
     ));
   }
 }
 
-new JSXBlock('banner');
+new PlaceholderBlock("postlistplaces");
+new PlaceholderBlock("postlistnews");
+
+
+/***
+ * 
+ * Custom Blocks
+ * 
+ */
+class JSXBlock {
+  function __construct($name, $renderCallback = null, $data=null) {
+    $this->name = $name;
+	$this->data; 
+	$this->renderCallback = $renderCallback;
+    add_action('init', [$this, 'onInit']);
+  }
+
+  function ourRenderCallback($attributes, $content) {
+	  ob_start();
+	  require get_theme_file_path("/uc-blocks/{$this->name}.php");
+	  return ob_get_clean();
+  }
+
+  function onInit() {
+    wp_register_script($this->name, get_stylesheet_directory_uri() . "/build/{$this->name}.js", array('wp-blocks', 'wp-editor'));
+
+	if ($this->data) {
+		wp_localize_script($this->name, $this->name, $this->date);
+	}
+
+	$ourArgs = array(
+		'editor_script' => $this->name
+	);
+
+	if ($this->renderCallback) {
+		$ourArgs['render_callback'] = [$this, 'ourRenderCallback'];
+	}
+	
+	register_block_type("ucblocktheme/{$this->name}",
+	$ourArgs);
+   }
+}
+
+new JSXBlock('banner', true);
+new JSXBlock('imagelightbox');
 
 
 

@@ -79,11 +79,7 @@ function EditComponent(props) {
 
 function SaveComponent() {
     return (
-        <div className="front-banner-image">
-            <div className="front-banner-image__content">
-                <InnerBlocks.Content />
-            </div>
-        </div>
+        <InnerBlocks.Content />
 
     )
 }

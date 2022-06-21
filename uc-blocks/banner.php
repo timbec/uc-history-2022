@@ -5,10 +5,11 @@ if (!$attributes['imgURL']) {
 }
 
 ?>
+<h1>This is the uc-blocks/banner.php</h1>
 
-<div class="page-banner">
-      <div class="page-banner__bg-image" style="background-image: url('<?php echo $attributes['imgURL'] ?>')"></div>
-      <div class="page-banner__content container t-center c-white">
+<div class="front-page-banner">
+      <div class="front-page-banner__image" style="background-image: url('<?php echo $attributes['imgURL'] ?>')"></div>
+      <div class="front-page-banner__content container t-center c-white">
         <?php echo $content; ?>
       </div>
     </div>
