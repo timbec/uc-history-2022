@@ -37,6 +37,8 @@
     "map": false
   },
   "scripts": {
+    "preview": "npm-run-all --parallel sync start",
+    "sync": "browser-sync start -p 'http:uchistory.local/' --files '**/*.php' 'build/*js' 'build/*.css'",
     "start": "wp-scripts start src/index.js uc-blocks/banner.js",
     "dev": "wp-scripts start",
     "devFast": "wp-scripts start",
@@ -46,5 +48,9 @@
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
     "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+  },
+  "dependencies": {
+    "browser-sync": "^2.27.9",
+    "jquery": "^3.6.0"
   }
 }
