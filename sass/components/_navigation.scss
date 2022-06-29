@@ -1,6 +1,10 @@
 // Main Menu
+.main-navigation {
+    width: 100%;
+}
 
-.nav-menu {
+.menu {
     display: flex;
     justify-content: space-evenly;
+    margin: 2rem 10rem;
 }

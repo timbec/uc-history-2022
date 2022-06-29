@@ -1,6 +1,6 @@
 /**
- *  Block for Custom Banners. To be used primarily in the 'Places' CPT section.  
- *
+ * Wouldn't it be simpler to use the default 'Cover' image or even 'Image'? 
+ *  
  */
 import apiFetch from "@wordpress/api-fetch"
 import { Button, PanelBody, PanelRow } from "@wordpress/components";
@@ -8,8 +8,8 @@ import { InnerBlocks, InspectorControls, MediaUpload, MediaUploadCheck } from "@
 import { registerBlockType } from "@wordpress/blocks"
 import { useEffect } from "@wordpress/element"
 
-wp.blocks.registerBlockType("ucblocktheme/banner", {
-    title: "Banner",
+wp.blocks.registerBlockType("ucblocktheme/slide", {
+    title: "Slide",
     supports: {
         align: ["full"]
     },

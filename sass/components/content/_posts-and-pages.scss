@@ -1,4 +1,21 @@
+#page {
+    max-width: 140rem;
+    margin: 0 auto;
+}
+
 .entry-content {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+// class for constraining elements
+.container {
     max-width: 80rem;
     margin: 0 auto;
+}
+
+/***Placeholder Styles for Basic Formatting**/
+.news-list,
+.places-list {
+    width: 60rem;
 }

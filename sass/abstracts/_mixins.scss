@@ -65,3 +65,22 @@ ORDER: Base + typography > general layout + grid > page layout > components
         ; //1800
     }
 }
+
+// Mixins from Course
+@mixin atSmall {
+    @media (min-width: 530px) {
+        @content;
+    }
+}
+
+@mixin atSmallMedium {
+    @media (min-width: 767px) {
+        @content;
+    }
+}
+
+@mixin atMedium {
+    @media (min-width: 960px) {
+        @content;
+    }
+}

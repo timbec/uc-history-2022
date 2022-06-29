@@ -8,13 +8,29 @@
     right: 0;
 }
 
-.front-banner-image {
+.front-page-banner {
     position: relative;
+    //break out of container, make full-width - may make helper class: 
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+
+    &__image {
+        background-size: cover;
+        width: 100%;
+        min-height: 60rem;
+    }
 
     &__content {
         position: absolute;
         top: 0;
         left: 0;
+        right: 0;
+        bottom: 0;
         width: 100%;
         height: 50rem; // temp
         display: flex;

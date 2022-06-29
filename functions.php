@@ -203,12 +203,13 @@ add_action( 'wp_head', 'uc_history_2022_preload_webfonts' );
  * Enqueue scripts and styles.
  */
 function uc_history_2022_scripts() {
-	wp_enqueue_style( 'uc-history-2022-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'uc-history-2022-style', get_stylesheet_uri(), array(), '_S_VERSION' );
 	
 	wp_style_add_data( 'uc-history-2022-style', 'rtl', 'replace' );
 
 	  wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+	wp_enqueue_script('main-university-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -217,30 +218,79 @@ function uc_history_2022_scripts() {
 add_action( 'wp_enqueue_scripts', 'uc_history_2022_scripts' );
 
 
-/***
- * Custom Gutenberg Blocks
+/**
+ * 
+ * Placeholder Blocks
  * 
  */
-class JSXBlock {
+class PlaceholderBlock {
   function __construct($name) {
     $this->name = $name;
     add_action('init', [$this, 'onInit']);
   }
 
+  function ourRenderCallback($attributes, $content) {
+    ob_start();
+    require get_theme_file_path("/uc-blocks/{$this->name}.php");
+    return ob_get_clean();
+  }
+
   function onInit() {
-    wp_register_script($this->name, get_stylesheet_directory_uri() . "/build/{$this->name}.js", array('wp-blocks', 'wp-editor'));
+    wp_register_script($this->name, get_stylesheet_directory_uri() . "/uc-blocks/{$this->name}.js", array('wp-blocks', 'wp-editor'));
+    
     register_block_type("ucblocktheme/{$this->name}", array(
-      'editor_script' => $this->name
+      'editor_script' => $this->name,
+      'render_callback' => [$this, 'ourRenderCallback']
     ));
   }
 }
 
-new JSXBlock('banner');
+new PlaceholderBlock("postlistplaces");
+new PlaceholderBlock("postlistnews");
 
 
+/***
+ * 
+ * Custom Blocks
+ * 
+ */
+class JSXBlock {
+  function __construct($name, $renderCallback = null, $data=null) {
+    $this->name = $name;
+	$this->data; 
+	$this->renderCallback = $renderCallback;
+    add_action('init', [$this, 'onInit']);
+  }
 
+  function ourRenderCallback($attributes, $content) {
+	  ob_start();
+	  require get_theme_file_path("/uc-blocks/{$this->name}.php");
+	  return ob_get_clean();
+  }
 
+  function onInit() {
+    wp_register_script($this->name, get_stylesheet_directory_uri() . "/build/{$this->name}.js", array('wp-blocks', 'wp-editor'));
 
+	if ($this->data) {
+		wp_localize_script($this->name, $this->name, $this->date);
+	}
+
+	$ourArgs = array(
+		'editor_script' => $this->name
+	);
+
+	if ($this->renderCallback) {
+		$ourArgs['render_callback'] = [$this, 'ourRenderCallback'];
+	}
+	
+	register_block_type("ucblocktheme/{$this->name}",
+	$ourArgs);
+   }
+}
+
+new JSXBlock('banner', true);
+new JSXBlock('slideshow', true);
+new JSXBlock('slide', true);
 
 
 /**
@@ -258,8 +308,8 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/template-functions.php';
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
+// /**
+//  * Customizer additions.
+//  */
+// require get_template_directory() . '/inc/customizer.php';
 
