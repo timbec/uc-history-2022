@@ -203,12 +203,13 @@ add_action( 'wp_head', 'uc_history_2022_preload_webfonts' );
  * Enqueue scripts and styles.
  */
 function uc_history_2022_scripts() {
-	wp_enqueue_style( 'uc-history-2022-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'uc-history-2022-style', get_stylesheet_uri(), array(), '_S_VERSION' );
 	
 	wp_style_add_data( 'uc-history-2022-style', 'rtl', 'replace' );
 
 	  wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+	wp_enqueue_script('main-university-js', get_theme_file_uri('/build/index.js'), array('jquery'), '1.0', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -288,12 +289,8 @@ class JSXBlock {
 }
 
 new JSXBlock('banner', true);
-new JSXBlock('imagelightbox');
-
-
-
-
-
+new JSXBlock('slideshow', true);
+new JSXBlock('slide', true);
 
 
 /**
@@ -311,8 +308,8 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/template-functions.php';
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
+// /**
+//  * Customizer additions.
+//  */
+// require get_template_directory() . '/inc/customizer.php';
 

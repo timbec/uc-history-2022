@@ -39,7 +39,7 @@
   "scripts": {
     "preview": "npm-run-all --parallel sync start",
     "sync": "browser-sync start -p 'http:uchistory.local/' --files '**/*.php' 'build/*js' 'build/*.css'",
-    "start": "wp-scripts start src/index.js uc-blocks/banner.js",
+    "start": "wp-scripts start src/index.js uc-blocks/banner.js uc-blocks/slideshow.js uc-blocks/slide.js",
     "dev": "wp-scripts start",
     "devFast": "wp-scripts start",
     "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
@@ -51,6 +51,9 @@
   },
   "dependencies": {
     "browser-sync": "^2.27.9",
-    "jquery": "^3.6.0"
+    "@glidejs/glide": "^3.4.1",
+    "@wordpress/icons": "^7.0.1",
+    "axios": "^0.21.1",
+    "normalize.css": "^8.0.1"
   }
 }

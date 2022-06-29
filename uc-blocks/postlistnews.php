@@ -1,4 +1,4 @@
-<section class="places-list">
+<section class="news-list">
     <h2>Latest News</h2>
 
     <?php 

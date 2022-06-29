@@ -9,4 +9,6 @@ TO DO:
 1) need related posts feature, either plugin or block
 2) banner images more consistent
 3) format front page
-4) 
+4) Comments plugin. EITHER a custom query to the database, or a block, with a custom API call. How to filter? 
+EITHER - latest comments from people not me 
+OR     -  comments I can flag somewhow as worth putting on front page (or elsewhere)

@@ -12,7 +12,10 @@
     while ($placesWidget->have_posts()) {
         $placesWidget->the_post(); ?>
         <li>
-        <img src="<?php the_post_thumbnail(); ?>" alt="" />
+       <?php the_post_thumbnail(); ?>
+        <a href="<?php the_permalink(); ?>">
+            <?php the_title(); ?>
+        </a>
         <a href="<?php the_permalink(); ?>">
             <?php the_title(); ?>
         </a>
