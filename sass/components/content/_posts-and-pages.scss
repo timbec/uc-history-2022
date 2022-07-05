@@ -14,6 +14,17 @@
     margin: 0 auto;
 }
 
+.page-header {
+    max-width: 120rem;
+    display: flex;
+    justify-content: center;
+
+    h2 {
+        font-size: 5rem;
+        margin: 3rem 0;
+    }
+}
+
 /***Placeholder Styles for Basic Formatting**/
 .news-list,
 .places-list {

@@ -1,8 +1,10 @@
 .site-branding {
     width: 100%;
+    max-width: 120rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
 
 
     &__atomic-symbol {

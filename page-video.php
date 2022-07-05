@@ -9,10 +9,10 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 	<header class="page-header">
-	    <h2>News</h2>
+	<h2>Video</h2>
 	</header>
 
-	<?php	$args = array( 'post_type' => 'news', 'posts_per_page' => 10 );
+	<?php	$args = array( 'post_type' => 'video', 'posts_per_page' => 10 );
 $loop = new WP_Query( $args );
 while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
@@ -36,7 +36,6 @@ while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 		</div><!--end .entry-text-->
 	<?php endwhile; ?>
-
 
 	   	</main><!-- Main -->
    	</div><!--end primary-->
