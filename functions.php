@@ -47,9 +47,14 @@ function uc_history_2022_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 
-	// This theme uses wp_nav_menu() in one location.
+	
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'uc-history-2022' ),
+	) );
+
+		
+	register_nav_menus( array(
+		'mobile' => __( 'Mobile Menu', 'uc-history-2022' ),
 	) );
 
 	/*

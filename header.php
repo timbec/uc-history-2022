@@ -26,6 +26,24 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'uc-history-2022' ); ?></a>
 
 	<header id="masthead" class="site-header">
+
+	<div class="navigation">
+            <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+
+            <label for="navi-toggle" class="navigation__button">
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
+
+            <div class="navigation__background">&nbsp;</div>
+
+            <nav class="navigation__nav">
+                <?php wp_nav_menu( array( 
+					'theme_location' => 'mobile',
+					'container' => null,
+					'menu_class' => 'navigation__list'
+					 ) ); ?>
+            </nav>
+        </div>
 		
 		<div class="site-branding">
 			<span class="site-branding__atomic-symbol">

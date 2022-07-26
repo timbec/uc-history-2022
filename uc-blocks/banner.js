@@ -69,7 +69,6 @@ function EditComponent(props) {
                 }}>
                 </figure>
                 <div className="page-banner__content container">
-                    {/* <InnerBlocks allowedBlocks={["core/paragraph", "core/heading"]} /> */}
                     <InnerBlocks allowedBlocks={"ucblocktheme/genericheading"} />
                 </div>
             </div>

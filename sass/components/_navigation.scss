@@ -1,6 +1,12 @@
 // Main Menu
 .main-navigation {
     width: 100%;
+    display: block;
+
+    @include respond(phone) {
+        display: none;
+    }
+
 }
 
 .menu {
@@ -8,3 +14,5 @@
     justify-content: space-evenly;
     margin: 2rem 10rem;
 }
+
+// will have to add mobile menu here. 

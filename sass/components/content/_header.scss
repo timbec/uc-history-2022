@@ -7,15 +7,28 @@
 
     &__atomic-symbol {
         max-width: 12rem;
+
+        @include respond(phone) {
+            display: none;
+        }
     }
 
     &__headframe {
         max-width: 12rem;
+
+        @include respond(phone) {
+            display: none;
+        }
     }
 
     .site-title {
         margin-bottom: .5rem;
         border-bottom: none;
+
+        @include respond(phone) {
+            width: 100%;
+            text-align: center;
+        }
 
         a {
             font-size: 6rem;
@@ -27,5 +40,10 @@
 
     .site-description {
         font-size: 3rem;
+
+        @include respond(phone) {
+            width: 100%;
+            text-align: center;
+        }
     }
 }
