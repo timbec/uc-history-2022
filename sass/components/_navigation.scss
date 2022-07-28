@@ -3,7 +3,7 @@
     width: 100%;
     display: block;
 
-    @include respond(phone) {
+    @include respond(tab-port) {
         display: none;
     }
 

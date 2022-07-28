@@ -3,9 +3,48 @@
     margin: 0 auto;
 }
 
+.entry-header {
+    margin-top: 3rem;
+
+    h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+        color: $color-black;
+        font-weight: 500;
+        text-align: center;
+    }
+}
+
 .entry-content {
     max-width: 120rem;
     margin: 0 auto;
+
+    p {
+        max-width: 80rem;
+        padding: 1rem 3rem;
+        margin-bottom: 1.6rem;
+
+        @include respond(tab-land) {
+            max-width: 100%;
+        }
+    }
+
+    p.first-paragraph {
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: left;
+        font-variant: small-caps;
+    }
+
+    .sidebar-image {
+        max-width: 30rem;
+        float: right;
+
+        @include respond(tab-land) {
+            max-width: 100%;
+            float: none;
+        }
+    }
 }
 
 // class for constraining elements
@@ -18,4 +57,24 @@
 .news-list,
 .places-list {
     width: 60rem;
+}
+
+.post-navigation {}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    .nav-previous {
+        padding-right: 3rem;
+    }
+
+    .nav-next {
+        padding-left: 3rem;
+    }
+
+    a {
+        font-size: 1.8rem;
+    }
 }

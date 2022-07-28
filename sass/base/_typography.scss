@@ -30,6 +30,7 @@ p {
 
 a {
     text-decoration: none;
+    color: $color-blue;
 }
 
 li {
@@ -44,4 +45,17 @@ img {
     width: 100%;
     max-width: 100%;
     height: auto;
+}
+
+figcaption {
+    font-size: 1.6rem;
+}
+
+/* modifying block styles */
+.wp-block-image {
+    width: 100%;
+    max-width: 80rem;
+    padding-left: 3rem;
+    margin: 0;
+    margin-bottom: 3rem;
 }

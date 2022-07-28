@@ -1,0 +1,53 @@
+.comments-area {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.comment-list {
+    clear: both;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.comment {
+    min-height: 2.25em;
+    padding-left: 1.25em;
+}
+
+.comment-meta {
+    font-size: .875rem;
+    line-height: 1.5;
+}
+
+.comment-author {
+    line-height: 1.5;
+
+    img {
+        border-radius: 1.5em;
+        display: block;
+        float: left;
+        height: 2.5em;
+        margin-top: 0.5em;
+        margin-right: 0.75em;
+        width: 2.5em;
+    }
+
+    b {
+        font-weight: 400;
+    }
+
+    span.say {
+        font-size: 1.6rem;
+    }
+}
+
+.comment-content {
+    padding: 0 3rem;
+
+    p {
+        font-size: 1em;
+        line-height: 1.8;
+        margin: 1em 0;
+    }
+}

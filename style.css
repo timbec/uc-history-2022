@@ -557,6 +557,7 @@ p {
 
 a {
 	text-decoration: none;
+	color: #012c52;
 }
 
 li {
@@ -573,6 +574,19 @@ img {
 	height: auto;
 }
 
+figcaption {
+	font-size: 1.6rem;
+}
+
+/* modifying block styles */
+.wp-block-image {
+	width: 100%;
+	max-width: 80rem;
+	padding-left: 3rem;
+	margin: 0;
+	margin-bottom: 3rem;
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -587,7 +601,7 @@ img {
 	max-width: 12rem;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
 	.site-branding__atomic-symbol {
 		display: none;
 	}
@@ -597,7 +611,7 @@ img {
 	max-width: 12rem;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
 	.site-branding__headframe {
 		display: none;
 	}
@@ -608,10 +622,12 @@ img {
 	border-bottom: none;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
 	.site-branding .site-title {
-		width: 100%;
+		max-width: 90%;
+		margin: 0 auto;
 		text-align: center;
+		line-height: 1.3;
 	}
 }
 
@@ -626,9 +642,16 @@ img {
 	font-size: 3rem;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
 	.site-branding .site-description {
 		width: 100%;
+		text-align: center;
+		margin-top: 1rem;
+	}
+}
+
+@media only screen and (max-width: 75em) {
+	.site-branding .site-description {
 		text-align: center;
 	}
 }
@@ -638,9 +661,52 @@ img {
 	margin: 0 auto;
 }
 
+.entry-header {
+	margin-top: 3rem;
+}
+
+.entry-header h1 {
+	font-size: 4rem;
+	line-height: 1.2;
+	color: #09021d;
+	font-weight: 500;
+	text-align: center;
+}
+
 .entry-content {
 	max-width: 120rem;
 	margin: 0 auto;
+}
+
+.entry-content p {
+	max-width: 80rem;
+	padding: 1rem 3rem;
+	margin-bottom: 1.6rem;
+}
+
+@media only screen and (max-width: 75em) {
+	.entry-content p {
+		max-width: 100%;
+	}
+}
+
+.entry-content p.first-paragraph {
+	font-size: 3rem;
+	font-weight: bold;
+	text-align: left;
+	font-variant: small-caps;
+}
+
+.entry-content .sidebar-image {
+	max-width: 30rem;
+	float: right;
+}
+
+@media only screen and (max-width: 75em) {
+	.entry-content .sidebar-image {
+		max-width: 100%;
+		float: none;
+	}
 }
 
 .container {
@@ -654,12 +720,84 @@ img {
 	width: 60rem;
 }
 
+.nav-links {
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem 2rem;
+}
+
+.nav-links .nav-previous {
+	padding-right: 3rem;
+}
+
+.nav-links .nav-next {
+	padding-left: 3rem;
+}
+
+.nav-links a {
+	font-size: 1.8rem;
+}
+
+.comments-area {
+	max-width: 75rem;
+	margin: 0 auto;
+}
+
+.comment-list {
+	clear: both;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.comment {
+	min-height: 2.25em;
+	padding-left: 1.25em;
+}
+
+.comment-meta {
+	font-size: .875rem;
+	line-height: 1.5;
+}
+
+.comment-author {
+	line-height: 1.5;
+}
+
+.comment-author img {
+	border-radius: 1.5em;
+	display: block;
+	float: left;
+	height: 2.5em;
+	margin-top: 0.5em;
+	margin-right: 0.75em;
+	width: 2.5em;
+}
+
+.comment-author b {
+	font-weight: 400;
+}
+
+.comment-author span.say {
+	font-size: 1.6rem;
+}
+
+.comment-content {
+	padding: 0 3rem;
+}
+
+.comment-content p {
+	font-size: 1em;
+	line-height: 1.8;
+	margin: 1em 0;
+}
+
 .main-navigation {
 	width: 100%;
 	display: block;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
 	.main-navigation {
 		display: none;
 	}
@@ -675,7 +813,7 @@ img {
 	display: none;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
 	.navigation {
 		display: block;
 	}
@@ -706,7 +844,7 @@ img {
 	}
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
 	.navigation__button {
 		top: 3rem;
 		right: 3rem;
@@ -760,11 +898,7 @@ img {
 	width: 100%;
 }
 
-.navigation__item {
-	margin: 1rem;
-}
-
-.navigation__link:link, .navigation__link:visited {
+.navigation__list .menu-item a {
 	display: inline-block;
 	font-size: 3rem;
 	font-weight: 300;
@@ -777,9 +911,19 @@ img {
 	transition: all .4s;
 }
 
-.navigation__link:link span, .navigation__link:visited span {
+.navigation__list .menu-item a span {
 	margin-right: 1.5rem;
 	display: inline-block;
+}
+
+.navigation__list .menu-item a:hover, .navigation__list .menu-item a:active {
+	background-position: 100%;
+	color: #8a8a8a;
+	transform: translateX(1rem);
+}
+
+.navigation__item {
+	margin: 1rem;
 }
 
 .navigation__link:hover, .navigation__link:active {

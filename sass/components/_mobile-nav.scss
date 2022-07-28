@@ -1,7 +1,7 @@
 .navigation {
     display: none;
 
-    @include respond(phone) {
+    @include respond(tab-port) {
         display: block;
     }
 
@@ -28,7 +28,7 @@
             right: 4rem;
         }
 
-        @include respond(phone) {
+        @include respond(tab-port) {
             top: 3rem;
             right: 3rem;
         }
@@ -76,6 +76,34 @@
         list-style: none;
         text-align: center;
         width: 100%;
+
+        .menu-item {
+
+            a {
+                display: inline-block;
+                font-size: 3rem;
+                font-weight: 300;
+                padding: 1rem 2rem;
+                color: $color-white;
+                text-decoration: none;
+                text-transform: uppercase;
+                background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+                background-size: 220%;
+                transition: all .4s;
+
+                span {
+                    margin-right: 1.5rem;
+                    display: inline-block;
+                }
+
+                &:hover,
+                &:active {
+                    background-position: 100%;
+                    color: $color-grey;
+                    transform: translateX(1rem);
+                }
+            }
+        }
     }
 
     &__item {
@@ -84,24 +112,7 @@
 
     &__link {
 
-        &:link,
-        &:visited {
-            display: inline-block;
-            font-size: 3rem;
-            font-weight: 300;
-            padding: 1rem 2rem;
-            color: $color-white;
-            text-decoration: none;
-            text-transform: uppercase;
-            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
-            background-size: 220%;
-            transition: all .4s;
 
-            span {
-                margin-right: 1.5rem;
-                display: inline-block;
-            }
-        }
 
         &:hover,
         &:active {
