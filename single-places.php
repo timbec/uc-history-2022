@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<h3>Single.php</h3>
+<h3>single-places.php</h3>
 
 	<main id="primary" class="site-main">
 

@@ -43,6 +43,8 @@ Version: 1.0.0
 @import "components/content/comment";
 @import "components/navigation";
 @import "components/mobile-nav";
+@import "components/content/places-full-width";
+@import "components/content/places-sidebar";
 
 /*--------------------------------------------------------------
 # Blocks
@@ -51,6 +53,13 @@ Version: 1.0.0
 @import "blocks/hero-slider";
 @import "blocks/cover";
 @import "blocks/news-list";
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+@import "pages/home";
+@import "pages/news";
+@import "pages/writing";
 
 /*--------------------------------------------------------------
 # Helpers

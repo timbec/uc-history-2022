@@ -24,7 +24,7 @@
         padding: 1rem 3rem;
         margin-bottom: 1.6rem;
 
-        @include respond(tab-land) {
+        @include respond(tab-port) {
             max-width: 100%;
         }
     }
@@ -34,16 +34,6 @@
         font-weight: bold;
         text-align: left;
         font-variant: small-caps;
-    }
-
-    .sidebar-image {
-        max-width: 30rem;
-        float: right;
-
-        @include respond(tab-land) {
-            max-width: 100%;
-            float: none;
-        }
     }
 }
 

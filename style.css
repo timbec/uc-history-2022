@@ -593,7 +593,7 @@ figcaption {
 .site-branding {
 	width: 100%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 }
 
@@ -640,6 +640,7 @@ figcaption {
 
 .site-branding .site-description {
 	font-size: 3rem;
+	text-align: center;
 }
 
 @media only screen and (max-width: 56.25em) {
@@ -684,7 +685,7 @@ figcaption {
 	margin-bottom: 1.6rem;
 }
 
-@media only screen and (max-width: 75em) {
+@media only screen and (max-width: 56.25em) {
 	.entry-content p {
 		max-width: 100%;
 	}
@@ -695,18 +696,6 @@ figcaption {
 	font-weight: bold;
 	text-align: left;
 	font-variant: small-caps;
-}
-
-.entry-content .sidebar-image {
-	max-width: 30rem;
-	float: right;
-}
-
-@media only screen and (max-width: 75em) {
-	.entry-content .sidebar-image {
-		max-width: 100%;
-		float: none;
-	}
 }
 
 .container {
@@ -806,7 +795,11 @@ figcaption {
 .menu {
 	display: flex;
 	justify-content: space-evenly;
-	margin: 2rem 10rem;
+	margin: 2rem 0rem;
+}
+
+.menu a {
+	text-transform: uppercase;
 }
 
 .navigation {
@@ -988,6 +981,24 @@ figcaption {
 .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
 	top: 0;
 	transform: rotate(-135deg);
+}
+
+.full-width .entry-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.sidebar-width .entry-content .sidebar-image {
+	max-width: 30rem;
+	float: right;
+}
+
+@media only screen and (max-width: 56.25em) {
+	.sidebar-width .entry-content .sidebar-image {
+		max-width: 100%;
+		float: none;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1181,6 +1192,96 @@ figcaption {
 	color: #09021d;
 	text-align: center;
 	font-size: 2rem;
+}
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+.home .entry-title {
+	display: none;
+}
+
+.home .news-list {
+	float: left;
+	margin-top: 5rem;
+}
+
+.home .news-list h2 {
+	font-size: 2.6rem;
+	margin-bottom: 3rem;
+}
+
+.home .news-list li {
+	display: flex;
+	margin-bottom: 3rem;
+}
+
+.home .news-list li img {
+	max-width: 25rem;
+}
+
+.home .places-list {
+	float: right;
+	margin-top: 5rem;
+}
+
+.home .places-list h2 {
+	font-size: 2.6rem;
+	margin-bottom: 3rem;
+}
+
+.home .places-list li {
+	margin-bottom: 3rem;
+}
+
+.wp-block-embed-youtube {
+	max-width: 60rem;
+}
+
+.wp-block-latest-comments {
+	max-width: 60rem;
+}
+
+.page-news__listing {
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 3rem;
+}
+
+.page-news__thumbnail {
+	max-width: 30rem;
+}
+
+.page-news__thumbnail img {
+	max-width: 100%;
+	height: auto;
+}
+
+.page-news__content {
+	margin-left: 5rem;
+}
+
+.page-writing__listing {
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 3rem;
+}
+
+.page-writing__thumbnail {
+	max-width: 35rem;
+}
+
+.page-writing__thumbnail img {
+	max-width: 100%;
+	height: auto;
+}
+
+.page-writing__content {
+	margin-left: 5rem;
 }
 
 /*--------------------------------------------------------------

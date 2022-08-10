@@ -1,0 +1,47 @@
+.home {
+
+    .entry-title {
+        display: none;
+    }
+
+    .news-list {
+        float: left;
+        margin-top: 5rem;
+
+        h2 {
+            font-size: 2.6rem;
+            margin-bottom: 3rem;
+        }
+
+        li {
+            display: flex;
+            margin-bottom: 3rem;
+
+            img {
+                max-width: 25rem;
+            }
+        }
+    }
+
+    .places-list {
+        float: right;
+        margin-top: 5rem;
+
+        h2 {
+            font-size: 2.6rem;
+            margin-bottom: 3rem;
+        }
+
+        li {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+.wp-block-embed-youtube {
+    max-width: 60rem;
+}
+
+.wp-block-latest-comments {
+    max-width: 60rem;
+}

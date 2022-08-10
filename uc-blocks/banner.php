@@ -5,7 +5,7 @@ if (!$attributes['imgURL']) {
 }
 
 ?>
-<h1>This is the uc-blocks/banner.php</h1>
+<!-- <h1>This is the uc-blocks/banner.php</h1> -->
 
 <div class="front-page-banner">
       <div class="front-page-banner__image" style="background-image: url('<?php echo $attributes['imgURL'] ?>')"></div>

@@ -1,7 +1,7 @@
 .site-branding {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
 
@@ -43,6 +43,7 @@
 
     .site-description {
         font-size: 3rem;
+        text-align: center;
 
         @include respond(tab-port) {
             width: 100%;

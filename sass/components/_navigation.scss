@@ -12,7 +12,11 @@
 .menu {
     display: flex;
     justify-content: space-evenly;
-    margin: 2rem 10rem;
+    margin: 2rem 0rem;
+
+    a {
+        text-transform: uppercase;
+    }
 }
 
 // will have to add mobile menu here. 

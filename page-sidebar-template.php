@@ -1,18 +1,17 @@
 <?php
 /**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package uc-history-2022
- */
-
+* Template Name: Sidebar Page
+* Template Post Type: places, writing
+*
+* @package uc-history-2022
+* @since Twenty Fourteen 1.0
+*/
 get_header();
 ?>
 
-<h3>Single.php</h3>
+<h3>page-sidebar-template.php</h3>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="sidebar-width">
 
 		<?php
 		while ( have_posts() ) :
@@ -38,5 +37,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
