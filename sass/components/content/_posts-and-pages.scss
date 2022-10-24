@@ -45,9 +45,19 @@
 
 /***Placeholder Styles for Basic Formatting**/
 .news-list,
-.places-list {
-    width: 60rem;
+.places-list,
+.photos-list,
+.writing-list {
+    width: 100%;
+
+    @include respond(phone) {
+        width: 100%;
+    }
 }
+
+
+
+
 
 .post-navigation {}
 

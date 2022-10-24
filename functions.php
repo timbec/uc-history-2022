@@ -252,6 +252,8 @@ class PlaceholderBlock {
 
 new PlaceholderBlock("postlistplaces");
 new PlaceholderBlock("postlistnews");
+new PlaceholderBlock("postlistphotos");
+new PlaceholderBlock("postlistwriting");
 
 
 /***

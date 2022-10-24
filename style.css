@@ -705,8 +705,19 @@ figcaption {
 
 /***Placeholder Styles for Basic Formatting**/
 .news-list,
-.places-list {
-	width: 60rem;
+.places-list,
+.photos-list,
+.writing-list {
+	width: 100%;
+}
+
+@media only screen and (max-width: 37.5em) {
+	.news-list,
+	.places-list,
+	.photos-list,
+	.writing-list {
+		width: 100%;
+	}
 }
 
 .nav-links {
@@ -1001,6 +1012,12 @@ figcaption {
 	}
 }
 
+.site-footer {
+	background: color-black;
+	color: white;
+	padding: 10rem 0;
+}
+
 /*--------------------------------------------------------------
 # Blocks
 --------------------------------------------------------------*/
@@ -1201,8 +1218,48 @@ figcaption {
 	display: none;
 }
 
-.home .news-list {
+.home h2 {
+	text-align: center;
+	font-size: 4rem;
+	margin-bottom: 2rem;
+}
+
+.home .list {
+	margin-top: 8rem;
 	float: left;
+}
+
+.home .list__container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.home .list__container--item {
+	width: 45%;
+}
+
+.home .news-list .list__container {
+	flex-direction: column;
+}
+
+.home .news-list .list__container--item {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 5rem;
+	border-bottom: 1px solid #09021d;
+}
+
+@media only screen and (max-width: 56.25em) {
+	.home .news-list .list__container--item img {
+		width: 50%;
+		margin-right: 5rem;
+	}
+}
+
+.home .news-list .places-list {
+	float: right;
 	margin-top: 5rem;
 }
 
@@ -1212,30 +1269,24 @@ figcaption {
 }
 
 .home .news-list li {
-	display: flex;
-	margin-bottom: 3rem;
-}
-
-.home .news-list li img {
-	max-width: 25rem;
-}
-
-.home .places-list {
-	float: right;
-	margin-top: 5rem;
-}
-
-.home .places-list h2 {
-	font-size: 2.6rem;
-	margin-bottom: 3rem;
-}
-
-.home .places-list li {
 	margin-bottom: 3rem;
 }
 
 .wp-block-embed-youtube {
-	max-width: 60rem;
+	width: 60rem;
+	width: 100%;
+	max-width: 100%;
+	float: left;
+}
+
+@media only screen and (max-width: 37.5em) {
+	.wp-block-embed-youtube {
+		float: none;
+	}
+}
+
+.wp-block-embed-youtube iframe {
+	width: 100%;
 }
 
 .wp-block-latest-comments {
