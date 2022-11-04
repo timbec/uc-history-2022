@@ -16,14 +16,16 @@ get_header();
 ?>
 <h4>page-news.php</h4>
 	<main id="primary" class="site-main page-news">
-	<h1>Places</h1>
 
-	<h3>Uranium City News</h3>
+	<article class="page-news__intro">
+        <h1 class="page-news__title">Uranium City News</h1>
 
-	<p>I try and keep up with the latest news about Uranium City. I'm a one-man band so can't keep up with everything but try to keep this page current. If any important news comes in that I haven't added here, please let me know. </p>
-		    <?php 
+        <p>I try and keep up with the latest news about Uranium City. I'm a one-man band so can't keep up with everything but try to keep this page current. If any important news comes in that I haven't added here, please let me know. </p>
+    </article>
     
-    $newsWidget = new WP_Query(array(
+    <ul class="page-news__container">
+    <?php 
+         $newsWidget = new WP_Query(array(
         'posts_per_page' => 6,
         'post_type' => 'news',
         'orderyby' => 'meta_value_num',
@@ -51,6 +53,8 @@ get_header();
         
         
     <?php } ?>
+    </ul>
+   
 
 	</main><!-- #main -->
 

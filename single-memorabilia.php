@@ -10,17 +10,27 @@
 get_header();
 ?>
 
-<h3>single-places.php</h3>
+<h3>single-memorabilia.php</h3>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main page-memorabilia">
 
+	<article class="page-memorabilia__intro">
+		<h1 class="page-memorabilia__title">
+			Welcome to the Memorabilia Page
+		</h1>
+		<p>
+			This pages features memoribilia sent to me over the years by ex-residents and collected by myself. Sadly, much of the memorabilia that existed in archives is slowly disappearing. 
+		</p>
+	</article>
+	<ul class="page-memorabilia__container">
 		<?php
 		while ( have_posts() ) :
-			the_post();
+			the_post(); ?>
+			<li class="page-memoriablia__item">
+				<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
+			</li>
 
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation(
+			<?php the_post_navigation(
 				array(
 					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'uc-history-2022' ) . '</span> <span class="nav-title">%title</span>',
 					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'uc-history-2022' ) . '</span> <span class="nav-title">%title</span>',
@@ -34,6 +44,7 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
+	</ul>
 
 	</main><!-- #main -->
 

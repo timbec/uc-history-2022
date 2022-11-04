@@ -1,0 +1,32 @@
+.page-places {
+    max-width: 120rem;
+    margin: 2rem 5rem;
+
+    &__title {
+        font-size: 3rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $color-black;
+    }
+
+    &__intro {
+        margin-bottom: 3rem;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: 45%;
+        margin-bottom: 5rem;
+
+        a {
+            font-size: 2rem;
+            color: $color-black;
+            margin-bottom: 3rem;
+        }
+    }
+}

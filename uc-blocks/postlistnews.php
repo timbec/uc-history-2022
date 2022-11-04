@@ -4,7 +4,7 @@
     <?php 
     
     $newsWidget = new WP_Query(array(
-        'posts_per_page' => 4,
+        'posts_per_page' => 3,
         'post_type' => 'news',
         'orderyby' => 'meta_value_num',
         'order' => 'ASC',

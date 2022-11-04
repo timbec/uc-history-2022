@@ -2,6 +2,8 @@
 .main-navigation {
     width: 100%;
     display: block;
+    background: $color-black;
+    margin-top: 3rem;
 
     @include respond(tab-port) {
         display: none;
@@ -12,10 +14,12 @@
 .menu {
     display: flex;
     justify-content: space-evenly;
+    padding: 0.5rem 0;
     margin: 2rem 0rem;
 
     a {
         text-transform: uppercase;
+        color: $color-white;
     }
 }
 
