@@ -1,0 +1,17 @@
+.page-video {
+
+    &__intro {
+        margin-bottom: 3rem;
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__listing {
+        width: 25%;
+        margin-bottom: 5rem;
+    }
+}

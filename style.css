@@ -593,7 +593,7 @@ figcaption {
 .site-branding {
 	width: 100%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 }
 
@@ -681,7 +681,7 @@ figcaption {
 
 .entry-content p {
 	max-width: 80rem;
-	padding: 1rem 3rem;
+	margin: 0 auto;
 	margin-bottom: 1.6rem;
 }
 
@@ -1402,6 +1402,21 @@ figcaption {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+}
+
+.page-video__intro {
+	margin-bottom: 3rem;
+}
+
+.page-video__container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.page-video__listing {
+	width: 25%;
+	margin-bottom: 5rem;
 }
 
 /*--------------------------------------------------------------

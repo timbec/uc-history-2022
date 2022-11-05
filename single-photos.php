@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<h3>single-places.php</h3>
+<h3>single-photos.php</h3>
 
 	<main id="primary" class="site-main">
 
@@ -18,7 +18,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			get_template_part( 'template-parts/content-page-photos', get_post_type() );
 
 			the_post_navigation(
 				array(

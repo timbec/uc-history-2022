@@ -29,7 +29,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php uc_history_2022_post_thumbnail(); ?>
+	<!-- <?php uc_history_2022_post_thumbnail(); ?> -->
 
 	<div class="entry-content">
 		<?php

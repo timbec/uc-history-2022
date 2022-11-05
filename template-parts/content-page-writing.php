@@ -8,17 +8,16 @@
  */
 
 ?>
-<h3>content-page-places.php</h3>
+<h3>content-page-writing.php</h3>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php uc_history_2022_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
-		
+		the_content();
 		?>
 	</div><!-- .entry-content -->
 

@@ -21,7 +21,8 @@
 
     p {
         max-width: 80rem;
-        padding: 1rem 3rem;
+        // padding: 1rem 3rem;
+        margin: 0 auto;
         margin-bottom: 1.6rem;
 
         @include respond(tab-port) {
