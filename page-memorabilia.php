@@ -16,9 +16,8 @@ get_header();
 ?>
 <h4>page-news.php</h4>
 	<main id="primary" class="site-main page-news">
-	<h1>Places</h1>
 
-	<h3>Uranium City News</h3>
+	<h1>Uranium City Memorabilia</h1>
 
 	<p>UC related things people have sent me over the years.  </p>
 		    <?php 

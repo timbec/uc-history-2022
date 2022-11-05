@@ -1,4 +1,10 @@
 .page-news {
+    max-width: 120rem;
+    margin: 2rem 5rem;
+
+    &__container {
+        margin-top: 8rem;
+    }
 
     &__listing {
         width: 80%;

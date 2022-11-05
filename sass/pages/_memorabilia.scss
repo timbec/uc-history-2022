@@ -1,0 +1,19 @@
+.page-memorabilia {
+    max-width: 120rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+
+    &__title {
+        font-size: 3rem;
+    }
+
+    &__intro {
+        margin-bottom: 5rem;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
